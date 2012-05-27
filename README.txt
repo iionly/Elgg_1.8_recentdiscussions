@@ -1,6 +1,6 @@
 Recent discussions plugin for Elgg 1.8
-Latest Version: 1.8.0
-Released: 2012-01-26
+Latest Version: 1.8.1
+Released: 2012-05-27
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (C) iionly 2012, (c) Jean-Baptiste Perriot 2009
@@ -26,6 +26,11 @@ Installation:
 
 
 Changelog:
+
+1.8.1
+
+- French translation added (thank to emanwebdev),
+- German translation added.
 
 1.8.0
 
