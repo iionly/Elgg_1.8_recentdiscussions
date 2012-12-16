@@ -5,6 +5,10 @@
  *
  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
  * @author Jean-Baptiste Perriot <jb@perriot.fr>
+ *
+ * for Elgg 1.8 by iionly
+ * (c) iionly 2012
+ * iionly@gmx.de
  */
 
 $max_topics = $vars['entity']->num_display;

@@ -1,5 +1,24 @@
 <?php
-$max_topics = 10;
+
+/**
+ * Elgg RecentDiscussions
+ *
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
+ * @author Jean-Baptiste Perriot <jb@perriot.fr>
+ *
+ * for Elgg 1.8 by iionly
+ * (c) iionly 2012
+ * iionly@gmx.de
+ */
+
+$widget = elgg_extract("entity", $vars);
+
+// get widget settings
+$max_topics = (int) $widget->recentdiscussions_count;
+if($max_topics < 1){
+    $max_topics = 10;
+}
+
 $offset = 0;
 $sortedposts = array();
 $topiccount = 0;
