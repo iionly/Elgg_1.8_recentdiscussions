@@ -7,7 +7,7 @@
  * @author Jean-Baptiste Perriot <jb@perriot.fr>
  *
  * for Elgg 1.8 by iionly
- * (c) iionly 2012
+ * (c) iionly 2012-2014
  * iionly@gmx.de
  */
 
@@ -37,17 +37,20 @@ while ($topiccount < $max_topics ) {
   foreach ($lastposts as $lastpost) {
     $topicid = $lastpost->entity_guid;
     $topic = get_entity($topicid);
-    $groupid = $topic->container_guid;
-    $group = get_entity($groupid);
+    $group = $topic->getContainerEntity();
 
-    if (!array_key_exists($groupid, $sortedposts)) {
-      $sortedposts[$groupid] = array();
+    if ($group) {
+      $groupid = $group->getGUID();
+
+      if (!array_key_exists($groupid, $sortedposts)) {
+        $sortedposts[$groupid] = array();
+      }
+      if (!array_key_exists($topicid, $sortedposts[$groupid])) {
+        $topiccount++;
+        $sortedposts[$groupid][$topicid] = array();
+      }
+      array_push($sortedposts[$groupid][$topicid], $lastpost);
     }
-    if (!array_key_exists($topicid, $sortedposts[$groupid])) {
-      $topiccount++;
-      $sortedposts[$groupid][$topicid] = array();
-    }
-    array_push($sortedposts[$groupid][$topicid], $lastpost);
 
     if ($topiccount >= $max_topics) {
       break;

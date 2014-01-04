@@ -8,7 +8,7 @@ foreach (array_keys($vars['groupsposts']) as $groupid) {
   $grouptopics = $vars['groupsposts'][$groupid];
   foreach (array_keys($grouptopics) as $topicid) {
     $topic = get_entity($topicid);
-    $info .= "- <a href=\"{$vars['url']}discussion/view/$topicid\">" . $topic->title . "</a><br>";
+    $info .= "- <a href=\"".elgg_get_site_url()."discussion/view/$topicid\">" . $topic->title . "</a><br>";
 
     if ($vars['showmessages']) {
       foreach ($grouptopics[$topicid] as $post) {

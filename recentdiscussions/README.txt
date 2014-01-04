@@ -1,9 +1,9 @@
 Recent discussions plugin for Elgg 1.8
-Latest Version: 1.8.2
-Released: 2012-12-16
+Latest Version: 1.8.3
+Released: 2014-01-04
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
-Copyright: (C) iionly 2012, (c) Jean-Baptiste Perriot 2009
+Copyright: (C) iionly 2012-2014, (c) Jean-Baptiste Perriot 2009-2014
 
 
 
@@ -31,6 +31,10 @@ Installation:
 
 
 Changelog:
+
+1.8.3:
+
+- Fixed WSOD due to listing of (public or logged-in accessible) discussions that belong to restricted/hidden groups. Such discussions are now no longer listed to non-members of these groups.
 
 1.8.2
 

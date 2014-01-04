@@ -8,7 +8,7 @@
  * @Author Jean-Baptiste Perriot <jb@perriot.fr>
  *
  * for Elgg 1.8 by iionly
- * (c) iionly 2012
+ * (c) iionly 2012-2014
  * iionly@gmx.de
  */
 

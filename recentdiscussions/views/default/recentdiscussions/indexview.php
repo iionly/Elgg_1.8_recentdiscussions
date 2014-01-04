@@ -19,17 +19,20 @@ while ($topiccount < $max_topics ) {
   foreach ($lastposts as $lastpost) {
     $topicid = $lastpost->entity_guid;
     $topic = get_entity($topicid);
-    $groupid = $topic->container_guid;
-    $group = get_entity($groupid);
+    $group = $topic->getContainerEntity();
 
-    if (!array_key_exists($groupid, $sortedposts)) {
-      $sortedposts[$groupid] = array();
+    if ($group) {
+      $groupid = $group->getGUID();
+
+      if (!array_key_exists($groupid, $sortedposts)) {
+        $sortedposts[$groupid] = array();
+      }
+      if (!array_key_exists($topicid, $sortedposts[$groupid])) {
+        $topiccount++;
+        $sortedposts[$groupid][$topicid] = array();
+      }
+      array_push($sortedposts[$groupid][$topicid], $lastpost);
     }
-    if (!array_key_exists($topicid, $sortedposts[$groupid])) {
-      $topiccount++;
-      $sortedposts[$groupid][$topicid] = array();
-    }
-    array_push($sortedposts[$groupid][$topicid], $lastpost);
 
     if ($topiccount >= $max_topics) {
       break;
